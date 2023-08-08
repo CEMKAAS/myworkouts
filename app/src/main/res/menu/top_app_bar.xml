@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/deleteAll"
+        android:title="Удалить"
+        android:contentDescription="Удалить"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/filler"
+        android:title="Фильтр"
+        android:contentDescription="Фильтр"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/moreAll"
+        android:contentDescription="Информация"
+        android:title="Информация"
+        app:showAsAction="never" />
+
+
+
+</menu>
