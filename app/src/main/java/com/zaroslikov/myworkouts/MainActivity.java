@@ -1,36 +1,36 @@
 package com.zaroslikov.myworkouts;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.navigation.NavigationBarView;
 import com.zaroslikov.myworkouts.db.MyDatabaseHelper;
 
 public class MainActivity extends AppCompatActivity {
 
     private MaterialToolbar appBar;
     private int position = 0;
-    private ExtendedFloatingActionButton fab;
     private MyDatabaseHelper myDB;
-
-    private ActivityMainBinding binding;
+    private BottomNavigationView bottomNavigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_main);
+
+        bottomNavigation = findViewById(R.id.nav_view);
         myDB = new MyDatabaseHelper(this);
         if (savedInstanceState == null) {  //при повороте приложение не брасывается
-
         }
-        fab = findViewById(R.id.extended_fab);
-        fab.setVisibility(View.GONE);
 
         appBar = findViewById(R.id.topAppBar);
         // AppBar
@@ -51,9 +51,53 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
 
-        set();
-        binding.navView.setVisibility(View.GONE);
-        binding.navView.setOnNavigationItemSelectedListener(item -> {
+
+        new NavigationBarView.OnItemSelectedListener(item ->{});
+
+        bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                position = item.getItemId();
+                if(position == R.id.warehouse_button){
+
+                    replaceFragment(new WarehouseFragment());
+                    appBar.setTitle("Мой Склад");
+                    fab.hide();
+                    fab.setVisibility(View.GONE);
+                } else if (position==R.id.add_button){
+                    replaceFragment(new AddFragment());
+                } else if (position == R.id.writeOff_button){
+                    replaceFragment(new WriteOffFragment());
+                } else if (position == R.id.finance_button) {
+                    replaceFragment(new FinanceFragment());
+                }
+
+                return false;
+            }
+        });
+
+
+       bottomNavigation.setOnItemSelectedListener(item -> {
+           position = item.getItemId();
+           if(position == R.id.warehouse_button){
+
+               replaceFragment(new WarehouseFragment());
+               appBar.setTitle("Мой Склад");
+               fab.hide();
+               fab.setVisibility(View.GONE);
+           } else if (position==R.id.add_button){
+               replaceFragment(new AddFragment());
+           } else if (position == R.id.writeOff_button){
+               replaceFragment(new WriteOffFragment());
+           } else if (position == R.id.finance_button) {
+               replaceFragment(new FinanceFragment());
+           }
+       });
+
+
+
+
+        bottomNavigation.setOnNavigationItemSelectedListener(item -> {
             position = item.getItemId();
 
             if(position == R.id.warehouse_button){
