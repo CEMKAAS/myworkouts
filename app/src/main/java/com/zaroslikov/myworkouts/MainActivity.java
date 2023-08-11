@@ -3,6 +3,7 @@ package com.zaroslikov.myworkouts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private int position = 0;
     private MyDatabaseHelper myDB;
     private BottomNavigationView bottomNavigation;
+    private ViewPagerAdapter viewPagerAdapter;
+    private ViewPager2 viewPager2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigation = findViewById(R.id.nav_view);
+        viewPager2 =findViewById(R.id.conteiner);
+        viewPagerAdapter = new ViewPagerAdapter(this);
+        viewPager2.setAdapter(viewPagerAdapter);
+
         myDB = new MyDatabaseHelper(this);
         if (savedInstanceState == null) {  //при повороте приложение не брасывается
         }
@@ -51,75 +58,47 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
 
-
-        new NavigationBarView.OnItemSelectedListener(item ->{});
-
         bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 position = item.getItemId();
-                if(position == R.id.warehouse_button){
-
-                    replaceFragment(new WarehouseFragment());
-                    appBar.setTitle("Мой Склад");
-                    fab.hide();
-                    fab.setVisibility(View.GONE);
-                } else if (position==R.id.add_button){
-                    replaceFragment(new AddFragment());
-                } else if (position == R.id.writeOff_button){
-                    replaceFragment(new WriteOffFragment());
-                } else if (position == R.id.finance_button) {
-                    replaceFragment(new FinanceFragment());
+                switch (position) {
+                    case R.id.me_button:
+                        viewPager2.setCurrentItem(0);
+                        break;
+                    case R.id.workout_button:
+                        viewPager2.setCurrentItem(1);
+                        break;
+                    case R.id.static_button:
+                        viewPager2.setCurrentItem(2);
+                        break;
                 }
-
                 return false;
             }
         });
 
 
-       bottomNavigation.setOnItemSelectedListener(item -> {
-           position = item.getItemId();
-           if(position == R.id.warehouse_button){
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                switch (position){
+                    case 0:
+                        bottomNavigation.getMenu().findItem(R.id.me_button).setChecked(true);
+                        break;
+                    case 1:
+                        bottomNavigation.getMenu().findItem(R.id.workout_button).setChecked(true);
+                        break;
+                    case 2:
+                        bottomNavigation.getMenu().findItem(R.id.static_button).setChecked(true);
+                        break;
 
-               replaceFragment(new WarehouseFragment());
-               appBar.setTitle("Мой Склад");
-               fab.hide();
-               fab.setVisibility(View.GONE);
-           } else if (position==R.id.add_button){
-               replaceFragment(new AddFragment());
-           } else if (position == R.id.writeOff_button){
-               replaceFragment(new WriteOffFragment());
-           } else if (position == R.id.finance_button) {
-               replaceFragment(new FinanceFragment());
-           }
-       });
+                }
 
-
-
-
-        bottomNavigation.setOnNavigationItemSelectedListener(item -> {
-            position = item.getItemId();
-
-            if(position == R.id.warehouse_button){
-                replaceFragment(new WarehouseFragment());
-                appBar.setTitle("Мой Склад");
-                fab.hide();
-                fab.setVisibility(View.GONE);
-            } else if (position==R.id.add_button){
-                replaceFragment(new AddFragment());
-            } else if (position == R.id.writeOff_button){
-                replaceFragment(new WriteOffFragment());
-            } else if (position == R.id.finance_button) {
-                replaceFragment(new FinanceFragment());
+                super.onPageSelected(position);
             }
-
-            return true;
         });
 
-
     }
-
-
     //Переходим на фрагмент
     private void replaceFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()

@@ -41,12 +41,12 @@
             android:layout_weight="1"
             >
 
-            <FrameLayout
+            <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/conteiner"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-            </FrameLayout>
+            </androidx.viewpager2.widget.ViewPager2>
 
             <FrameLayout
                 android:id="@+id/bottom_sheet"

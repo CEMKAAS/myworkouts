@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <item android:id="@+id/warehouse_button"
+    <item android:id="@+id/me_button"
         android:title="Я"/>
 
-    <item android:id="@+id/finance_button"
+    <item android:id="@+id/workout_button"
         android:title="Тренировки"/>
 <!--    android:icon="@drawable/ic_baseline_currency_ruble_24"-->
 
-    <item android:id="@+id/add_button"
+    <item android:id="@+id/static_button"
         android:title="Статистика"/>
 </menu>
