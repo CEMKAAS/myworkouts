@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -62,17 +63,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 position = item.getItemId();
-                switch (position) {
-                    case R.id.me_button:
-                        viewPager2.setCurrentItem(0);
-                        break;
-                    case R.id.workout_button:
-                        viewPager2.setCurrentItem(1);
-                        break;
-                    case R.id.static_button:
-                        viewPager2.setCurrentItem(2);
-                        break;
+
+                if(position == R.id.me_button){
+                    viewPager2.setCurrentItem(0);
+                } else if (position == R.id.workout_button) {
+                    viewPager2.setCurrentItem(1);
+                } else if (position == R.id.static_button) {
+                    viewPager2.setCurrentItem(2);
                 }
+
                 return false;
             }
         });

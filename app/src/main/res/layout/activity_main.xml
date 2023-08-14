@@ -24,7 +24,7 @@
                 app:menu="@menu/top_app_bar"
                 app:title=""
                 app:titleCentered="true"
-                app:titleTextAppearance="@style/TextAppearance.MyApp.DisplaySmall4" />
+               />
 
 <!--            <com.yandex.mobile.ads.banner.BannerAdView-->
 <!--                android:id="@+id/banner_ad_view"-->
