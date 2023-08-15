@@ -6,38 +6,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".DayFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
     <Button
-        style="?attr/materialIconButtonStyle"
+        android:background="@drawable/roundedbutton"
         android:id="@+id/iconButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="ПН"
         />
 
     <Button
-        style="?attr/materialIconButtonStyle"
         android:id="@+id/iconButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="ВТ"
         />
     <Button
-        style="?attr/materialIconButtonStyle"
         android:id="@+id/iconButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="СР"
         />
     <Button
-        style="?attr/materialIconButtonStyle"
+
         android:id="@+id/iconButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="ЧТ"
         />
     <Button
-        style="?attr/materialIconButtonStyle"
+
         android:id="@+id/iconButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="ПТ"
         />
+
     <Button
         style="?attr/materialIconButtonStyle"
         android:id="@+id/iconButton6"
@@ -51,5 +59,5 @@
         android:layout_height="wrap_content"
         />
 
-
+    </LinearLayout>
 </FrameLayout>
