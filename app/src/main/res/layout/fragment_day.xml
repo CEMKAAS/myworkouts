@@ -11,53 +11,53 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-    <Button
-        android:background="@drawable/roundedbutton"
-        android:id="@+id/iconButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ПН"
-        />
+        <Button
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:id="@+id/iconButton1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="ПН"
+            />
 
-    <Button
-        android:id="@+id/iconButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ВТ"
-        />
-    <Button
-        android:id="@+id/iconButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="СР"
-        />
-    <Button
+<!--    <Button-->
+<!--        android:id="@+id/iconButton2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="ВТ"-->
+<!--        />-->
+<!--    <Button-->
+<!--        android:id="@+id/iconButton3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="СР"-->
+<!--        />-->
+<!--    <Button-->
 
-        android:id="@+id/iconButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ЧТ"
-        />
-    <Button
+<!--        android:id="@+id/iconButton4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="ЧТ"-->
+<!--        />-->
+<!--    <Button-->
 
-        android:id="@+id/iconButton5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ПТ"
-        />
+<!--        android:id="@+id/iconButton5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="ПТ"-->
+<!--        />-->
 
-    <Button
-        style="?attr/materialIconButtonStyle"
-        android:id="@+id/iconButton6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-    <Button
-        style="?attr/materialIconButtonStyle"
-        android:id="@+id/iconButton7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+<!--    <Button-->
+<!--        style="?attr/materialIconButtonStyle"-->
+<!--        android:id="@+id/iconButton6"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        />-->
+<!--    <Button-->
+<!--        style="?attr/materialIconButtonStyle"-->
+<!--        android:id="@+id/iconButton7"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        />-->
 
     </LinearLayout>
 </FrameLayout>
