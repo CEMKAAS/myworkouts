@@ -9,94 +9,138 @@
     <!-- TODO: Update blank fragment layout -->
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout
-        android:id="@+id/container_workout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/rounded"
         android:orientation="vertical">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_margin="4dp"
-            android:background="@drawable/rounded_edit_text"
-            android:hint="  Название тренировки"
-            android:inputType="textCapWords"
-
-            android:textSize="16sp" />
-
         <LinearLayout
+            android:id="@+id/container_workout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded"
+            android:orientation="vertical">
 
             <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/rounded_edit_text"
-                android:hint=" Кол-во подходов " />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/rounded_edit_text"
-                android:hint=" Кол-во повтор. " />
-
-            <EditText
+                android:id="@+id/nameWorkout"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_margin="4dp"
                 android:background="@drawable/rounded_edit_text"
-                android:hint=" Раб. вес" />
+                android:hint="  Название тренировки"
+                android:inputType="textCapWords" />
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/timeWorkout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_edit_text"
+                android:hint="  00:00"
+                android:inputType="textCapWords" />
 
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/countOneWorkout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_edit_text"
+                android:hint="  Кол-во повторений"
+                android:inputType="textCapWords" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:checkedButton="@+id/radio_button_1"
                 android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/radio_button_1"
+                <EditText
+                    android:id="@+id/count_one_workout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/rounded_edit_text"
+                    android:hint=" Кол-во подходов " />
+
+                <EditText
+                    android:id="@+id/approach_workout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/rounded_edit_text"
+                    android:hint=" Кол-во повтор. " />
+
+                <EditText
+                    android:id="@+id/working_weight"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/baseline_fitness_center_24" />
+                    android:layout_height="40dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/rounded_edit_text"
+                    android:hint=" Раб. вес" />
 
-                <RadioButton
-                    android:id="@+id/radio_button_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/baseline_directions_run_24" />
+            </LinearLayout>
 
-                <RadioButton
-                    android:id="@+id/radio_button_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/baseline_emoji_people_24" />
-
-            </RadioGroup>
-
-            <Button
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:layout_marginRight="15dp"
-                android:drawableLeft=""
-                android:text="дальше >" />
-        </LinearLayout>
-    </LinearLayout>
+                android:gravity="right"
+                android:orientation="horizontal">
 
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@+id/radio_button_1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_button_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/baseline_fitness_center_24" />
+
+                    <RadioButton
+                        android:id="@+id/radio_button_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/baseline_directions_run_24" />
+
+                    <RadioButton
+                        android:id="@+id/radio_button_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/baseline_emoji_people_24" />
+
+                </RadioGroup>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginRight="15dp"
+                    android:drawableLeft=""
+                    android:text="Добавить" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft=""
+            android:layout_gravity="center"
+            android:text="+ Добавить Еще тренировку " />
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft=""
+            android:layout_gravity="center"
+            android:text="Далее > " />
+    </LinearLayout>
 
 </FrameLayout>
