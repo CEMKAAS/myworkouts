@@ -1,25 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".DayFragment">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:gravity="center"
-        >
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name_project"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Назавание тренировки"
+            app:endIconMode="custom"
+            app:errorEnabled="true"
+            app:helperText="Укажите название тренировки"
+            app:helperTextEnabled="true">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionGo"
+            android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
             android:id="@+id/tags"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:toggle_selectableAmount="5"
+            app:flexWrap="wrap"
+            android:layout_marginTop="25dp"
             app:justifyContent="space_between"
-            app:flexWrap="wrap">
+            app:toggle_selectableAmount="5">
 
             <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
                 android:id="@+id/tag1"
@@ -74,10 +92,9 @@
 
 
         <Button
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft=""
-
             android:layout_gravity="center"
             android:text="дальше >" />
     </LinearLayout>
