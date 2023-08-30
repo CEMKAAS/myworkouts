@@ -19,6 +19,7 @@
             android:layout_marginRight="5dp"
             android:hint="Назавание тренировки"
             app:endIconMode="custom"
+            android:background="@drawable/rounded"
             app:errorEnabled="true"
             app:helperText="Укажите название тренировки"
             app:helperTextEnabled="true">
@@ -36,6 +37,7 @@
             android:layout_height="wrap_content"
             app:flexWrap="wrap"
             android:layout_marginTop="25dp"
+            android:background="@drawable/rounded"
             app:justifyContent="space_between"
             app:toggle_selectableAmount="5">
 
