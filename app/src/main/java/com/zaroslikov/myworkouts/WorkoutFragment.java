@@ -30,20 +30,20 @@ public class WorkoutFragment extends Fragment {
         empty_imageview = layuot.findViewById(R.id.empty_imageview);
         no_data = layuot.findViewById(R.id.no_data);
         buttonAdd = layuot.findViewById(R.id.workout_button);
-        
 
+        open();
 
         return layuot;
     }
 
 
-    public void storeDataInArraysClassLogic(Cursor cursor, int id){
-        cursor.moveToLast();
-        product.add(new ProductDB(cursor.getInt(0), cursor.getString(1), cursor.getDouble(2),
-                cursor.getString(3) + "." + cursor.getString(4) + "." + cursor.getString(5), cursor.getInt(id)));
-        while (cursor.moveToPrevious()) {
-            product.add(new ProductDB(cursor.getInt(0), cursor.getString(1), cursor.getDouble(2),
-                    cursor.getString(3) + "." + cursor.getString(4) + "." + cursor.getString(5), cursor.getInt(id)));
+    public void open(){
+
+        Cursor cursor = myDB.readProject();
+        if (cursor.getCount() == 0) {
+        empty_imageview.setVisibility(View.VISIBLE);
+        no_data.setVisibility(View.VISIBLE);
+        buttonAdd.setVisibility(View.VISIBLE);
         }
         cursor.close();
         empty_imageview.setVisibility(View.GONE);

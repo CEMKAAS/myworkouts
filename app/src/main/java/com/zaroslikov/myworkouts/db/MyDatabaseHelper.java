@@ -54,17 +54,17 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return context.deleteDatabase(MyConstanta.DB_NAME);
     }
 
-//
-//    public Cursor readProject() {
-//        String query = "SELECT * FROM " + MyConstanta.TABLE_NAME;
-//        SQLiteDatabase db = this.getReadableDatabase();
-//
-//        Cursor cursor = null;
-//        if (db != null) {
-//            cursor = db.rawQuery(query, null);
-//        }
-//        return cursor;
-//    }
+
+    public Cursor readProject() {
+        String query = "SELECT * FROM " + MyConstanta.TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (db != null) {
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
 //
 //    public Cursor readProduct() {
 //        String query = "SELECT * FROM " + MyConstanta.TABLE_NAME_PRODUCT;
